@@ -28,9 +28,25 @@ if ($result && $result->num_rows > 0) {
     $tableContent = '<tr><td colspan="3">Brak danych w bazie.</td></tr>';
 }
 
+$sql = 'SELECT * FROM linki';
+$result = $conn->query($sql);
+
+// Generuj HTML linków z danymi
+$linkContent = '<ul>';
+if ($result && $result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $linkContent .= '<li><a href="' . htmlspecialchars($row['url']) . '" class="menu-link">' . htmlspecialchars($row['nazwa']) . '</a></li>';
+    }
+} else {
+    $linkContent .= '<li>Brak linków w bazie danych.</li>';
+}
+$linkContent .= '</ul>';
+
+// Załaduj szablon HTML i wstaw linki
 // Załaduj szablon HTML
 $html = file_get_contents('public_html/index.html');
 $html = str_replace('{CONTENT}', $tableContent, $html);
+$html = str_replace('{LINKS}', $linkContent, $html);
 echo $html;
 
 $conn->close();
