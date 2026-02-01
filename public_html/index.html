@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Polska - Portal Informacyjny</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Polska</h1>
+                    <p>Portal Informacyjny</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-layout">
+            <!-- SIDEBAR - MENU -->
+            <div class="sidebar">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#demografia" class="menu-link">Demografia</a></li>
+                        <li><a href="#miasta" class="menu-link">Miasta</a></li>
+                        <li><a href="#turystyka" class="menu-link">Co warto zobaczyć</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content">
+                <section id="demografia">
+                    <h2>Demografia Polski</h2>
+                    <table>
+                        <tr>
+                            <th>Rok</th>
+                            <th>Liczba ludności</th>
+                            <th>Przyrost naturalny</th>
+                        </tr>
+                        {CONTENT}
+                    </table>
+                </section>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>&copy; 2026 Portal Polska. Autor: <span>Wojtek Siemienik</span></p>
+        </div>
+    </div>
+</body>
+</html>
