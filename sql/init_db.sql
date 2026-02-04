@@ -16,3 +16,14 @@ CREATE TABLE IF NOT EXISTS linki (
     nazwa VARCHAR(255) NOT NULL,
     url VARCHAR(255) NOT NULL
 );
+
+-- Tworzenie tabeli miast (miasta)
+CREATE TABLE IF NOT EXISTS miasta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nazwa VARCHAR(255) NOT NULL,
+    liczba_ludnosci INT NOT NULL,
+    wojewodztwo VARCHAR(255) NOT NULL,
+    turyści_2024 INT NOT NULL,
+    zdjęcie VARCHAR(500),
+);
+
